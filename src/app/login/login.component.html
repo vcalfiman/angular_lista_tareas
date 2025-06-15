@@ -1,0 +1,17 @@
+<h2>Iniciar Sesión</h2>
+
+<mat-form-field appearance="fill" style="width: 100%;">
+  <mat-label>Usuario</mat-label>
+  <input matInput [(ngModel)]="username">
+</mat-form-field>
+
+<mat-form-field appearance="fill" style="width: 100%;">
+  <mat-label>Contraseña</mat-label>
+  <input matInput [(ngModel)]="password" type="password">
+</mat-form-field>
+
+<button mat-raised-button color="primary" (click)="onLogin()">
+  Ingresar
+</button>
+
+<p *ngIf="loginError" style="color: red;">Credenciales incorrectas</p>
