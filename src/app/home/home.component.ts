@@ -1,20 +1,27 @@
 import { Component } from '@angular/core';
-import { RouterModule, Router } from '@angular/router';
+import { RouterModule } from '@angular/router';  // módulo para directivas routerLink etc.
+import { Router } from '@angular/router';        // servicio para navegar programáticamente
 import { MatButtonModule } from '@angular/material/button';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [RouterModule, MatButtonModule],
   template: `
-    <h2>Bienvenido</h2>
+    <h2>Bienvenido {{ username }} </h2>
     <button mat-raised-button color="accent" (click)="logout()">Cerrar sesión</button>
   `,
 })
 export class HomeComponent {
-  constructor(private router: Router) {}
+  username: string | null = null;
+  constructor(private router: Router, private auth: AuthService) {
+    this.username = this.auth.getUsername();
+  }
 
   logout(): void {
-    this.router.navigate(['/']);
+    this.auth.logout();
+    this.router.navigate(['/login']);
   }
 }
+
