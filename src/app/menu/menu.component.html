@@ -1,0 +1,24 @@
+<mat-sidenav-container class="sidenav-container">
+    <!-- Menú lateral -->
+    <mat-sidenav #sidenav mode="side" opened>
+      <mat-nav-list>
+        <a mat-list-item class="custom-link" routerLink="/home" routerLinkActive="active" (click)="sidenav.close()">Inicio</a>
+        <a mat-list-item class="custom-link" routerLink="/tareas" routerLinkActive="active" (click)="sidenav.close()">Tareas</a>
+        <a mat-list-item class="custom-link" (click)="logout()">Cerrar sesión</a>
+      </mat-nav-list>
+    </mat-sidenav>
+  
+    <!-- Contenido principal -->
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>Mi Aplicación</span>
+        <span class="spacer"></span>
+      </mat-toolbar>
+  
+      <!-- Aquí se cargan los módulos dinámicamente -->
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

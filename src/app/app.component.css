@@ -1,0 +1,22 @@
+.sidenav-container {
+    height: 100%;
+  }
+  
+  mat-sidenav {
+    width: 250px;
+    background-color: #494949; /* Fondo gris oscuro */
+  }
+  
+  .spacer {
+    flex: 1 1 auto;
+  }
+  
+  mat-nav-list a {
+    color: #ffffff; /* Texto blanco */
+    text-decoration: none;
+  }
+  
+  mat-nav-list a.active {
+    font-weight: bold;
+    background-color: #616161; /* Fondo más oscuro para la ruta activa */
+  }

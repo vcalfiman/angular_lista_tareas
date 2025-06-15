@@ -5,11 +5,19 @@ import { HomeComponent } from './home/home.component';
 import { TareasComponent } from './tareas/tareas.component';
 import { AuthGuard } from './auth.guard';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { MenuComponent } from './menu/menu.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
-  { path: 'tareas', component: TareasComponent, canActivate: [AuthGuard] },
+  {
+    path: '',
+    component: MenuComponent,
+    canActivate: [AuthGuard],
+    children: [
+      { path: 'home', component: HomeComponent },
+      { path: 'tareas', component: TareasComponent }
+    ]
+  },
   { path: '**', component: NotFoundComponent } // Ruta comodín
 ];

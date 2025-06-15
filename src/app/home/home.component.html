@@ -1,9 +1,6 @@
-<h2>Bienvenido</h2>
+  <!-- Contenido principal -->
 
-<button mat-raised-button color="primary" (click)="irATareas()">
-  Ver tareas
-</button>
-
-<button mat-raised-button color="warn" (click)="logout()">
-  Cerrar sesión
-</button>
+    <div class="contenido">
+      <h2>Bienvenido {{ username }}</h2>
+      <button mat-raised-button color="warn" (click)="logout()">Cerrar sesión</button>
+    </div>

@@ -1,0 +1,32 @@
+.sidenav-container {
+    height: 100%;
+  }
+  
+  mat-sidenav {
+    width: 250px;
+    background-color: #525151; /* Fondo gris oscuro */
+  }
+  
+  .spacer {
+    flex: 1 1 auto;
+  }
+  
+  mat-nav-list a {
+    color: #ffffff; /* Texto blanco */
+    text-decoration: none;
+  }
+
+  mat-nav-list{
+    color: #ffffff; /* Texto blanco */
+    text-decoration: none;
+  }
+  
+  mat-nav-list a.active {
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #166856; /* Fondo más oscuro para la ruta activa */
+  }
+
+  ::ng-deep .custom-link .mdc-list-item__primary-text {
+    color: #ffffff !important;
+  }

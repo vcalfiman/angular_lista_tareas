@@ -1,0 +1,26 @@
+.sidenav-container {
+  height: 100%;
+}
+
+mat-sidenav {
+  width: 250px;
+  background-color: #494949; /* Fondo gris oscuro */
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.contenido {
+  margin: 20px;
+  color: #1c9681;
+}
+
+.mat-list-item .mat-list-item-content {
+  color: #ffffff !important; /* Fuerza el texto blanco */
+}
+
+.mat-list-item:hover {
+  background-color: #616161; /* Fondo más oscuro al pasar el mouse */
+  color: #ffffff !important; /* Mantén el texto blanco */
+}

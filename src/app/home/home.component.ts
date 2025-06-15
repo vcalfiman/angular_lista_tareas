@@ -1,22 +1,38 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';  // módulo para directivas routerLink etc.
-import { Router } from '@angular/router';        // servicio para navegar programáticamente
+import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 import { AuthService } from '../auth.service';
+// import { MatMenuModule } from '@angular/material/menu';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterModule, MatButtonModule],
-  template: `
-    <h2>Bienvenido {{ username }} </h2>
-    <button mat-raised-button color="accent" (click)="logout()">Cerrar sesión</button>
-  `,
+  imports: [
+    RouterModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
+  ],
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css'] 
 })
+
 export class HomeComponent {
   username: string | null = null;
+
   constructor(private router: Router, private auth: AuthService) {
     this.username = this.auth.getUsername();
+  }
+
+  irATareas(): void {
+    this.router.navigate(['/tareas']); // Navega a la ruta '/tareas'
   }
 
   logout(): void {
